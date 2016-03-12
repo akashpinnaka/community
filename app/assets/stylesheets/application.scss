@@ -839,7 +839,8 @@ footer{
     width: 95%;
     margin: 1em auto 0 auto;
     a{
-      margin-top: 1em;
+      display: inline-block;
+      margin-top: 0.5em;
       .course{
         padding: 1em;
         width: 100%;
