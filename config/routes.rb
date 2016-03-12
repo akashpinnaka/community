@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   
-  root "posts#index"
+  
+
+  root "welcome#index"
 
   resources :users
 
-  resources :posts
+  resources :posts do
+    collection do
+      get :education_posts
+      get :other_posts
+    end
+  end
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

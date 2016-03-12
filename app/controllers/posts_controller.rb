@@ -11,6 +11,16 @@ class PostsController < ApplicationController
 
   end
 
+  def education_posts
+    @posts = Post.where(category: "education")
+    render "index"
+  end
+
+  def other_posts
+    @posts = Post.where(category: "other")
+    render "index"
+  end
+
   def new
     @post = current_user.posts.new
   end
@@ -49,7 +59,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :description)
+    params.require(:post).permit(:title, :description, :category)
   end
 
   def find_post
