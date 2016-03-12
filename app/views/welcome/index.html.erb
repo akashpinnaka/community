@@ -1,0 +1,45 @@
+<section id="banner">
+  <div id="banner-inner" class="clearfix">
+    <%= image_tag("logo.png") %>
+    <h2>Lets suggest and support our Government.</h2>
+    <hr class="hr_banner">
+    <h3>Politicians share what they think, discuss our ideas.</h3>
+    <h3>we are happy to take good ideas from you.</h3>
+    <a href="#" class="user-idea"><!-- Request video -->Post an Idea</a><br>
+    <i class="fa fa-angle-double-down"></i>
+  </div>      
+</section>
+
+<section id="courses" class="clearfix">
+  <a href="/posts/education_posts">
+    <div class="course">
+      <div class="logo">
+        <%= image_tag("book_logo.png") %>
+      </div>
+      <div class="course_description">
+        <h2>Education</h2>
+        <p>Comment and discuss the educational issues in real time.</p>
+      </div>
+    </div>
+  </a>
+  <a href="/posts/education_posts">
+    <div class="course">
+      <div class="logo">
+        <%= image_tag("cogs_logo.png") %>
+      </div>
+      <div class="course_description">
+        <h2>Political</h2>
+        <p>Comment and discuss the political issues in real time.</p>
+      </div>
+    </div>
+  </a>
+</section>
+<hr>
+<section id="latest-update">
+  <h2>Latest post on <%= link_to Post.last.category, education_posts_posts_path %></h2>
+  <div id="latest-post">
+     <h3>This is the title of the post</h3>
+     <p><%= truncate(Post.last.description, length: 150) %></p>
+  </div>
+</section>
+
