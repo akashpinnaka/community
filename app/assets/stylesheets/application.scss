@@ -795,3 +795,90 @@ footer{
     } 
   }  
 }
+
+@media screen and (max-width: 500px) {
+
+  header{
+    #header-inner{
+      width: 90%;
+      #logo{
+        float: left;
+        img{
+          width: 30px;
+        }
+      }
+      nav{
+        float: right;
+        a{
+          display: inline-block;
+          margin-left: 1.2em;
+        }
+      }
+    }
+  }
+
+  #banner{
+    background-color: #2D465A;
+  }
+
+  #courses{
+    width: 90%;
+    margin: 2em auto 0 auto;
+    a{
+      .course{
+        padding: 1em;
+        margin: 1em auto;
+        border-radius: 0.5em;
+        .logo{
+          width: 20%;
+          float: left;
+          overflow: hidden;
+          img{
+            width: 200%;
+          }
+        }
+        .course_description{
+          width: 80%;
+          padding: 0 1em;
+          float: right;
+          h2{
+            color: #204056;
+            font-weight: 400;
+            font-size: 1.2em;
+          }
+          p{
+            color: #988;
+            font-size: 0.86em;
+            margin-top: 0.3em;
+          }
+        }
+      }
+      &:hover{
+        .course{
+          background-color: #f9f3f3;
+          border: 1px solid rgba(242,76,78,0.1);
+          transition: background-color .3s ease;
+          .logo{
+            img{
+              position: relative;
+              right: 100%;
+              animation-name: slide_image;
+              animation-duration: .3s;
+            }
+          }
+          .course_description{ 
+            h2{
+              color: $highlight;
+              transition: color .3s ease;
+            }
+            p{
+              color: #b88;
+              transition: color .3s ease;
+            }
+          }
+        }
+      }
+    }  
+  }  
+
+}
