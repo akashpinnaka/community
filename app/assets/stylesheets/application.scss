@@ -902,6 +902,45 @@ footer{
     }  
   }
 
+  .form-wrapper{
+    width: 80%;
+    margin: 2em auto;
+    h3{
+      text-align: center;
+      color: #204056;
+    }
+    form{
+      width: 100%;
+      label{
+        display: inline-block;
+        color: $textcolor;
+        margin: 0.4em 0;
+      }
+      input[type="text"], input[type="password"], textarea{
+        width: 100%;
+        height: 25px;
+        margin-bottom: 0.4em;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        padding: 0.3em 1em;
+        font-size: 1em;
+        color: $textcolor;
+      }
+      input[type="file"]{
+        margin-bottom: 0.4em;
+      }
+      textarea{
+        height: 100px;
+        resize: vertical;
+        color: $textcolor;
+      }
+      input[type="submit"]{
+        padding: 0.2em 0.5em;
+        cursor: pointer;
+      }
+    }
+  }  
+
   
 
 }
