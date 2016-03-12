@@ -1,0 +1,583 @@
+$textcolor: #3c3f4f;
+$highlight: #f24c4e;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.clearfix{
+  &:before, &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+html,body{
+  height: 100%;
+  font-family: arial, verdana, helvetica, sans-serif;
+}
+a{
+  text-decoration: none;
+}
+
+p.flash-notice{
+  margin: 0.3em;
+  border-radius: 2px;
+  text-align: center;
+  color: $highlight;
+  border: 1px solid rgba(242,76,78,0.7);
+  background-color: rgba(242,76,78,0.3);
+  padding: 0.3em;
+}
+
+/* STYLES FOR APPLICATION LAYOUT */
+
+#content-wrapper{
+  
+}
+
+/* STYLES FOR POSTS#INDEX */
+
+#posts-index-wrapper{
+  width: 70%;
+  margin: 0 auto;
+  h2{
+    text-align: center;
+    margin-top: 1em;
+    color: #204056;
+    font-size: 1.3em;
+  }
+  p.nav-links{
+    text-align: center;
+    margin-top: 1em;
+    a{
+      font-size: 0.85em;
+      display: inline-block;
+      color: #fff;
+      background-color: $highlight;
+      padding: 0.36em 1em;
+      border:1px solid $highlight;
+      border-radius: 1em;
+      transition: color .3s ease;
+      transition: background-color .3s ease;
+      &:hover{
+        color: $highlight;
+        background-color: #fff;
+      }
+      &:last-of-type{
+        color: $highlight;
+        background-color: #fff;
+        &:hover{
+          color: #fff;
+          background-color: $highlight;
+        }
+      }
+    }
+  }
+  hr{
+    margin: 2em auto 0 auto;
+    width: 3%;
+    border: 1px solid $highlight;
+  }
+
+  #posts-wrapper{
+    padding: 2em;
+    width: 70%;
+    margin: 0 auto;
+    #post-wrapper{
+      padding: 0 2em;
+      h3{
+        margin-bottom: 0.4em;
+        a{
+          color: #204056;
+          font-weight: 400;
+          letter-spacing: 0.03em;
+          transition: color .3s ease;
+          &:hover{
+            color: $highlight;
+          }
+        }
+        span{
+          display: inline-block;
+          margin-left: 1em;
+          a{
+            font-size: 0.9em;
+            color: $highlight;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      p{
+        margin-bottom: 0.3em;
+        color: #777;
+        font-size: 0.9em;
+        letter-spacing: 0.02em;
+        &:last-of-type{
+          text-align: right;
+        }
+        a{
+          color: $highlight;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    hr{
+      margin: 1em 2em;
+      width: 5%;
+      border-bottom: 0;
+      &:last-of-type{
+        display: none;
+      }
+    }
+  }
+}
+
+/* STYLES FOR POSTS#SHOW */
+
+#posts-show-wrapper{
+  width: 60%;
+  margin: 2em auto;
+  #post{
+    h2{
+      margin: 0.5em 0;
+      color: #204056;
+      font-size: 1.3em;
+      letter-spacing: 0.03em;
+    }
+    p{
+      font-size: 0.93em;
+      color: $textcolor;
+      letter-spacing: 0.02em;
+      line-height: 1.4em;
+      &:last-of-type{
+        text-align: right;
+        margin: 1em 0;
+
+      }
+      a{
+        color: $highlight;
+      }
+    }  
+  }
+  #disqus{
+    margin-top: 2em;
+  }
+}
+
+/* STYLES FOR POSTS#NEW AND POSTS#EDIT */
+
+#form-wrapper{
+  width: 50%;
+  margin: 2em auto;
+  p{
+    text-align: right;
+    a{
+      font-size: 0.8em;
+      color: #fff;
+      background-color: $highlight;
+      border: 1px solid $highlight;
+      padding: 0.4em 2em;
+      border-radius: 1em;
+      &:hover{
+        color: $highlight;
+        background-color: #fff;
+      }
+    }
+  }
+  form{
+    label{
+      display: inline-block;
+      color: $highlight;
+      margin: 0.5em 0;
+      letter-spacing: 0.02em;
+    }
+    input[type="text"]{
+      width: 100%;
+      height: 25px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+      padding: 0.3em;
+      font-size: 0.9em;
+      color: $textcolor;
+      letter-spacing: 0.04em;
+    }
+    textarea{
+      width: 100%;
+      resize: vertical;
+      height: 300px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+      padding: 0.7em;
+      font-size: 1.2em;
+      color: $textcolor;
+      letter-spacing: 0.04em;
+    }
+    input[type="submit"]{
+      margin-top: 0.5em;
+      cursor: pointer;
+      font-size: 0.8em;
+      color: #fff;
+      background-color: $highlight;
+      border: 1px solid $highlight;
+      padding: 0.4em 2em;
+      border-radius: 1em;
+      &:hover{
+        color: $highlight;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+/* STYLES FOR SESSIONS#NEW TEMPLATE */
+
+#sessions-new-wrapper{
+  width: 40%;
+  margin: 6em auto;
+  h3{
+    text-align: center;
+    color: #204056;
+  }
+  form{
+    width: 100%;
+    input{
+      margin-top: 1em;
+    }
+    input[type="text"],input[type="password"]{
+      width: 100%;
+      height: 25px;
+      padding: 0.4em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+    input[type="submit"]{
+      color: #fff;
+      background-color: $highlight;
+      border: 1px solid $highlight;
+      padding: 0.5em 2em;
+      border-radius: 1em;
+      cursor: pointer;
+      &:hover{
+        color: $highlight;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+/* STYLES FOR USERS#INDEX */
+
+#users-index-wrapper{
+  width: 50%;
+  margin: 3em auto;
+  h3{
+    text-align: center;
+    color: $textcolor;
+    margin-bottom: 1em;
+  }
+  table{
+    border-collapse: collapse;
+    width: 100%;
+    color: $textcolor;
+    tr{
+      padding: 0.5em 0;
+
+      td,th{
+        text-align: center;
+        padding: 0.4em 1em;
+      }
+    }
+    tr.even{
+      background-color: #d9d9d9;
+    }
+    tr:first-of-type{
+      background-color: $highlight;
+      color: #fff;
+    }
+
+  }
+}
+
+/* STYLES FOR USES#NEW & USER#EDIT */
+
+.form-wrapper{
+  width: 40%;
+  margin: 2em auto;
+  h3{
+    text-align: center;
+    color: #204056;
+  }
+  form{
+    width: 100%;
+    label{
+      display: inline-block;
+      color: $textcolor;
+      margin: 0.4em 0;
+    }
+    input[type="text"], input[type="password"], textarea{
+      width: 100%;
+      height: 25px;
+      margin-bottom: 0.4em;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      padding: 0.3em 1em;
+      font-size: 1em;
+      color: $textcolor;
+    }
+    input[type="file"]{
+      margin-bottom: 0.4em;
+    }
+    textarea{
+      height: 100px;
+      resize: vertical;
+      color: $textcolor;
+    }
+    input[type="submit"]{
+      padding: 0.2em 0.5em;
+      cursor: pointer;
+    }
+  }
+}
+
+/* STYLES FOR USERS#SHOW TEMPLATE */
+
+#users-show-wrapper{
+  width: 60%;
+  margin: 3em auto;
+  #profile-picture{
+    float: left;
+    width: 30%;
+    img{
+      width: 100%;
+    }
+    h3{
+      text-align: center;
+      color: $highlight;
+    }
+  }
+  #description{
+    box-sizing: border-box;
+    padding-left: 3em;
+    float: right;
+    width: 70%;
+    h3{
+      font-size: 2em;
+      color: $highlight;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+    h4{
+      font-weight: 400;
+      color: #204056;
+      margin: 1em 0;
+      letter-spacing: 0.04em;
+    }
+  }
+  #about{
+    margin-top: 3em;
+    h3{
+      color: #204056;
+      margin-bottom: 1em;
+    }
+    p{
+      color: $textcolor;
+      letter-spacing: 0.03em;
+      line-height: 1.7em;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  /* STYLES FOR POSTS#INDEX */
+  #posts-index-wrapper{
+    width: 80%;
+    h2{
+      margin-top: 0.8em;
+      font-size: 1.25em;
+    }
+    p.nav-links{
+      margin-top: 0.8em;
+      a{
+        font-size: 0.8em;
+      }
+    }
+    hr{
+      margin: 1.5em auto 0 auto;
+    }
+    #posts-wrapper{
+      padding: 1.8em;
+      width: 90%;
+      #post-wrapper{
+        padding: 0 1.7em;
+        h3{
+          margin-bottom: 0.3em;
+        }
+        p{
+          margin-bottom: 0.27em;
+        }
+      }
+      hr{
+        margin: 0.9em 1.8em;
+      }
+    }
+  }
+
+   /* STYLES FOR POSTS#SHOW */
+   #posts-show-wrapper{
+      width: 80%;
+      margin: 1.8em auto;
+      #post{
+        h2{
+          font-size: 1.25em;
+        }
+        p{
+          font-size: 0.9em;
+          line-height: 1.4em;
+          &:last-of-type{
+            margin: 0.9em 0;
+
+          }
+        }  
+      }
+      #disqus{
+        margin-top: 1.8em;
+      }
+    }
+
+  /*STYLES FOR USERS#SHOW */
+  #users-show-wrapper{
+    width: 80%;
+    margin: 3em auto;
+    #description{
+      padding-left: 2em;
+      h3{
+        font-size: 1.6em;
+        color: $highlight;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+      }
+      h4{
+        font-weight: 400;
+        color: #204056;
+        margin: 1em 0;
+        letter-spacing: 0.04em;
+      }
+    }
+    #about{
+      margin-top: 3em;
+      h3{
+        color: #204056;
+        margin-bottom: 1em;
+      }
+      p{
+        color: $textcolor;
+        letter-spacing: 0.03em;
+        line-height: 1.7em;
+      }
+    }
+  }
+
+} 
+
+@media screen and (max-width: 768px) {
+
+  /* STYLES FOR POSTS#INDEX */
+  #posts-index-wrapper{
+    width: 100%;
+    h2{
+      font-size: 1.2em;
+    }
+    p.nav-links{
+      margin-top: 0.8em;
+      a{
+        font-size: 0.76em;
+      }
+    }
+    hr{
+      margin: 1.2em auto 0 auto;
+    }
+    #posts-wrapper{
+      box-sizing: border-box;
+      padding: 0.7em;
+      width: 98%;
+
+      #post-wrapper{
+        padding: 0 1em;
+        h3{
+          margin-bottom: 0.25em;
+        }
+        p{
+          margin-bottom: 0.23em;
+        }
+      }
+      hr{
+        margin: 0.87em 1em;
+      }
+    }
+  }
+
+   /* STYLES FOR POSTS#SHOW */
+ #posts-show-wrapper{
+    width: 90%;
+    margin: 1.6em auto;
+    #post{
+      h2{
+        font-size: 1.15em;
+      }
+      p{
+        font-size: 0.9em;
+        line-height: 1.6em;
+        letter-spacing: 0.05em;
+        &:last-of-type{
+          margin: 0.9em 0;
+
+        }
+      }  
+    }
+    #disqus{
+      margin-top: 1.8em;
+    }
+  }
+
+  /*STYLES FOR USERS#SHOW */
+  #users-show-wrapper{
+    width: 90%;
+    margin: 2em auto;
+    #description{
+      padding-left: 2em;
+      h3{
+        font-size: 1.4em;
+        letter-spacing: 0.02em;
+      }
+      h4{
+        margin: 0.8em 0;
+        letter-spacing: 0.04em;
+      }
+    }
+    #about{
+      margin-top: 1.4em;
+      h3{
+        color: #204056;
+        margin-bottom: 0.4em;
+      }
+      p{
+        color: $textcolor;
+        letter-spacing: 0.03em;
+        line-height: 1.7em;
+      }
+    }
+  }
+
+} 

@@ -1,0 +1,8 @@
+<div id="sessions-new-wrapper">
+  <h3>Person Login</h3>
+  <%= form_for(:session, url: login_path) do |f| %> 
+    <%= f.text_field :username, :placeholder => "Username" %> <br />
+    <%= f.password_field :password, :placeholder => "Password" %><br /> 
+    <%= f.submit "Log in" %>
+  <% end %>  
+</div>

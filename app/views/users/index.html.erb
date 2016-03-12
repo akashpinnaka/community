@@ -1,0 +1,21 @@
+<div id="users-index-wrapper">
+  <h3>Persons List</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Party</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= user.name %></td>
+        <td><%= user.role %></td>
+        <td><%= user.party %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+  
+
+  
+  

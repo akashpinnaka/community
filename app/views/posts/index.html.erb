@@ -1,0 +1,27 @@
+<div id="posts-index-wrapper">
+  <% if session[:user_id] %>
+    <h2>Welcome, <%= current_user.name %></h2>
+    <p class="nav-links">
+      <%= link_to "Post something", new_post_path %>
+      <%= link_to "Add person", new_user_path if session[:role] == "admin" %>
+      <%= link_to "Logout", logout_path if session[:user_id] %>
+    </p>
+    <hr>
+  <% end %>
+  <div id="posts-wrapper">
+    <% @posts.each do |post| %>
+      <div id="post-wrapper">
+        <h3>
+          <%= link_to post.title, post %>
+          <% if session[:user_id] && post.user_id == session[:user_id] %>
+            <span><%= link_to "Edit", edit_post_path(post) %></span>
+          <% end %>
+        </h3>
+        <p><%= truncate(post.description, length: 100) %></p>
+        <p>- <%= link_to post.user.name, user_path(post.user) %></p>
+      </div>
+      <hr>    
+    <% end %>  
+  </div>
+  
+</div>
